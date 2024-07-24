@@ -1,0 +1,59 @@
+<h2>Services</h2>
+  <div class="absolute w-full h-full bg-black top-0 left-0 opacity-50 hidden"
+  name="backdrop-div" id="backdrop-div" onclick="hideForm()"></div>
+  <button class="bg-teal-800 hover:bg-teal-700 rounded-lg text-gray-100 px-5 py-3 w-40" id="show-service-form"
+  name="show-service-form" onclick="showForm()">
+    Get New Service</button>
+<div class="max-w-lg lg:ms-auto text-center mt-5 self-center absolute top-20 hidden" name="service-request">
+    <div class="py-8 px-7 rounded-md bg-white border-2 border-teal-800">                                  
+      <form class="" action="" method="POST">
+        <div class="grid md:grid-cols-2 grid-cols-1 gap-6">
+          <input type="text" id="fname" name="fname" placeholder="Nom *" class="w-full border-b-2 border-black py-2 px-3 bg-white outline-none">
+          <input type="number" id="phone" name="phone" placeholder="Téléphone *" class="w-full border-b-2 border-black py-2 px-3 bg-white outline-none py-2 px-3">
+          <div class="md:col-span-2">
+            <input type="email" id="email" name="email" placeholder="E-mail" class="w-full py-2 px-3 border-b-2 border-black py-2 px-3 bg-white outline-none">
+          </div>
+          <div class="md:col-span-2">
+            <input type="text" id="address" name="address" placeholder="Subcity / Kebele / House No." class="w-full border-b-2 border-black py-2 px-3 bg-white outline-none py-2 px-3">
+          </div>
+          <div class="md:col-span-2">
+            <label for="subject" class="float-left block  font-normal text-gray-400 text-lg">Vous accompagner sur :</label>
+            <select id="subject" name="subject" class="w-full border-b-2 border-black py-2 px-3 bg-white outline-none py-2 px-3">
+              <option value="" disabled selected>Sélectionnez un domaine</option>
+              <option value="Option-1">Référencement</option>
+              <option value="Option-2">Publicité Digitale</option>
+              <option value="Option-3">Brand Content</option>
+              <option value="Option-4">Marketing Digital</option>
+              <option value="Option-5">Emailing</option>
+              <option value="Option-6">Création Graphique</option>
+              <option value="Option-7">Vidéo</option>
+            </select>
+          </div>
+          
+          <div class="md:col-span-2">
+            <textarea name="message" rows="5" cols="" placeholder="Votre Massage *" class="w-full border-2 border-black py-2 px-3 bg-white outline-none py-2 px-3"></textarea>
+          </div>
+          
+          <div class="md:col-span-2">
+            <button class="py-3 text-base font-medium rounded text-white bg-blue-800 w-full hover:bg-blue-700 transition duration-300">Valider</button>
+          </div>
+        </div>
+      </form>
+    </div>
+</div>
+
+<script>
+
+  function showForm() {
+    let backdrop = document.querySelector('[name="backdrop-div"]');
+    let form = document.querySelector('[name="service-request"]');
+    backdrop.style.display = form.style.display = 'block';
+  }
+
+  function hideForm() {
+    let backdrop = document.querySelector('[name="backdrop-div"]');
+    let form = document.querySelector('[name="service-request"]');
+    backdrop.style.display = form.style.display ='none';
+  }
+
+</script>
